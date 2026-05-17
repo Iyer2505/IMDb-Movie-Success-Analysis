@@ -1,50 +1,48 @@
 # IMDb Movie Success Analysis: Revenue, Ratings & Genre Trends
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
-![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-yellow)
-![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Regression-green)
+![Power%20BI](https://img.shields.io/badge/Power%20BI-Dashboard-yellow)
+![Machine%20Learning](https://img.shields.io/badge/Machine%20Learning-Regression-green)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
-## Project Overview
+---
 
-This project analyzes IMDb movie data to understand the key factors that influence movie success. The analysis explores relationships between movie revenue, IMDb ratings, audience votes, critic scores, genres, directors, runtime, and release year.
+## 📌 Project Overview
 
-The project includes three major components:
+This project analyzes IMDb movie data to understand the key factors that influence movie success. The analysis explores the relationship between movie revenue, IMDb ratings, audience votes, critic scores, genres, directors, runtime, and release year.
 
-1. Exploratory Data Analysis using Python
-2. Machine Learning model to predict movie revenue
-3. Interactive Power BI dashboard for business insights
+The project combines **Exploratory Data Analysis**, **Machine Learning**, and an **interactive Power BI dashboard** to identify patterns in movie performance and predict revenue using available movie attributes.
 
-The goal is to transform raw movie data into actionable insights that can support decisions around movie performance, audience engagement, genre strategy, and revenue forecasting.
+The goal is to understand what drives a movie’s commercial and critical success.
 
 ---
 
-## Business Problem
+## 🎯 Business Problem
 
-Movie performance is influenced by multiple factors such as genre, audience ratings, critic scores, votes, runtime, and director history. However, high ratings do not always guarantee high revenue, and high revenue does not always indicate strong critical success.
+Movie success depends on several factors such as audience rating, critic score, genre, director, votes, and release year. However, high-rated movies do not always generate high revenue, and high-grossing movies are not always critically acclaimed.
 
-This project investigates:
+This project answers the question:
 
-> What factors contribute most to a movie's commercial and critical success?
+> What factors contribute most to a movie’s commercial and critical success?
 
 ---
 
-## Objectives
+## 🧠 Project Objectives
 
 The main objectives of this project are to:
 
-- Analyze movie revenue and rating patterns
-- Identify top-performing movies by revenue and IMDb rating
-- Understand genre-level trends in revenue, ratings, and audience engagement
+- Analyze movie revenue and IMDb rating patterns
+- Identify top-performing movies by revenue and rating
+- Understand genre-level performance trends
 - Compare audience ratings with critic scores
 - Analyze director performance
 - Explore yearly trends in movie performance
 - Build a machine learning model to predict movie revenue
-- Create a Power BI dashboard to communicate insights clearly
+- Create a Power BI dashboard for business storytelling
 
 ---
 
-## Dataset
+## 🗂️ Dataset Description
 
 The dataset contains IMDb movie information including movie title, genre, director, actors, release year, runtime, IMDb rating, votes, revenue, and metascore.
 
@@ -56,7 +54,7 @@ The dataset contains IMDb movie information including movie title, genre, direct
 | `Genre` | Movie genre or multiple genres |
 | `Director` | Movie director |
 | `Actors` | Main cast |
-| `Year` | Release year |
+| `Year` | Movie release year |
 | `Runtime (Minutes)` | Movie duration |
 | `Rating` | IMDb audience rating |
 | `Votes` | Number of IMDb votes |
@@ -65,7 +63,7 @@ The dataset contains IMDb movie information including movie title, genre, direct
 
 ---
 
-## Tools & Technologies
+## 🛠️ Tools & Technologies
 
 - Python
 - Pandas
@@ -74,15 +72,15 @@ The dataset contains IMDb movie information including movie title, genre, direct
 - Seaborn
 - Plotly
 - Scikit-learn
-- Power BI
 - Jupyter Notebook
+- Power BI
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
 ```text
-IMDb-Movie-Success-Analysis/
+IMBD Data/
 │
 ├── data/
 │   ├── raw/
@@ -107,13 +105,13 @@ IMDb-Movie-Success-Analysis/
 │   └── imdb_movie_success_dashboard.pbix
 │
 ├── images/
-│   ├── dashboard_executive_overview.png
-│   ├── dashboard_genre_audience.png
-│   ├── dashboard_director_performance.png
-│   ├── dashboard_ml_prediction.png
-│   ├── model_performance_rmse.png
-│   ├── actual_vs_predicted_revenue.png
-│   └── feature_importance.png
+│   ├── actual_vs_predicted_revenue.png.png
+│   ├── dashboard_director_performance.png.png
+│   ├── dashboard_executive_overview.png.png
+│   ├── dashboard_genre_audience.png.png
+│   ├── dashboard_ml_prediction.png.png
+│   ├── feature_importance.png.png
+│   └── model_performance_rmse.png.png
 │
 ├── README.md
 ├── requirements.txt
@@ -122,11 +120,11 @@ IMDb-Movie-Success-Analysis/
 
 ---
 
-## Exploratory Data Analysis
+## 🔍 Exploratory Data Analysis
 
-The EDA focuses on identifying important patterns in movie performance.
+The EDA phase focuses on understanding the movie dataset, cleaning missing values, creating useful features, and answering key business questions.
 
-### Key Business Questions
+### Business Questions
 
 1. Which movies generated the highest revenue?
 2. Which movies received the highest IMDb ratings?
@@ -137,37 +135,41 @@ The EDA focuses on identifying important patterns in movie performance.
 7. Which directors consistently produce successful movies?
 8. How have movie ratings and revenues changed over time?
 
-### Data Cleaning & Feature Engineering
+---
+
+## 🧹 Data Cleaning & Feature Engineering
 
 The data preparation process included:
 
 - Standardizing column names
 - Handling missing values in revenue and metascore
 - Creating missing-value indicator columns
-- Splitting multi-genre movies into separate genre records
-- Creating a genre bridge table for dashboard analysis
+- Splitting multi-genre movies into individual genre records
+- Creating a genre bridge table for Power BI analysis
 - Creating rating and revenue categories
-- Creating additional features for machine learning
+- Creating machine learning-ready features
 
-Engineered features include:
+### Engineered Features
 
-- `primary_genre`
-- `genre_count`
-- `movie_age`
-- `title_length`
-- `director_movie_count`
-- `rating_category`
-- `revenue_category`
+| Feature | Description |
+|---|---|
+| `primary_genre` | First listed genre of each movie |
+| `genre_count` | Number of genres assigned to a movie |
+| `movie_age` | Age of movie based on release year |
+| `title_length` | Length of movie title |
+| `director_movie_count` | Number of movies by the director in the dataset |
+| `rating_category` | Grouped IMDb rating category |
+| `revenue_category` | Grouped revenue category |
 
 ---
 
-## Machine Learning Model
+## 🤖 Machine Learning Model
 
-A regression model was built to predict movie revenue using movie-related attributes.
+A regression model was developed to predict movie revenue using available movie attributes.
 
-### ML Objective
+### Machine Learning Objective
 
-> Predict movie revenue based on available features such as IMDb rating, votes, runtime, metascore, release year, genre, and director-related attributes.
+> Predict movie revenue based on features such as IMDb rating, votes, runtime, metascore, release year, genre, and director-related attributes.
 
 ### Target Variable
 
@@ -187,19 +189,19 @@ Three regression models were compared:
 
 The models were evaluated using:
 
-- MAE: Mean Absolute Error
-- RMSE: Root Mean Squared Error
+- MAE — Mean Absolute Error
+- RMSE — Root Mean Squared Error
 - R² Score
 
-### Best Performing Model
+---
 
-The best model was:
+## 📊 Model Performance
+
+The best-performing model was:
 
 ```text
 Gradient Boosting Regressor
 ```
-
-Model performance:
 
 | Metric | Value |
 |---|---:|
@@ -207,19 +209,31 @@ Model performance:
 | RMSE | 79.44 million |
 | R² Score | 0.52 |
 
-The model explains approximately 52% of the variation in movie revenue using the available dataset features.
+The model explains approximately **52% of the variation in movie revenue** using the available dataset features.
 
-### Model Interpretation
-
-Revenue prediction is challenging because major revenue drivers such as production budget, marketing spend, release strategy, franchise strength, distribution scale, and release season are not included in the dataset.
-
-Even with these limitations, the model provides useful insight into which available features are most associated with revenue performance.
+Revenue prediction remains challenging because important business factors such as production budget, marketing spend, release strategy, franchise strength, and distribution scale are not included in the dataset.
 
 ---
 
-## Power BI Dashboard
+## 📈 Machine Learning Visualizations
 
-An interactive Power BI dashboard was created to communicate the analysis and machine learning results.
+### Model Performance by RMSE
+
+![Model Performance](IMBD%20Data/images/model_performance_rmse.png.png)
+
+### Actual vs Predicted Revenue
+
+![Actual vs Predicted Revenue](IMBD%20Data/images/actual_vs_predicted_revenue.png.png)
+
+### Feature Importance
+
+![Feature Importance](IMBD%20Data/images/feature_importance.png.png)
+
+---
+
+## 📊 Power BI Dashboard
+
+An interactive Power BI dashboard was created to communicate the analysis and machine learning results in a business-friendly format.
 
 ### Dashboard Pages
 
@@ -244,58 +258,74 @@ The dashboard includes four pages:
 
 ---
 
-## Dashboard Preview
-
-Replace these image paths with your actual exported Power BI screenshots after building the dashboard.
+## 🖼️ Dashboard Preview
 
 ### Executive Overview
 
-![Executive Overview](IMBD_Data/images/dashboard_executive_overview.png)
+![Executive Overview](IMBD%20Data/images/dashboard_executive_overview.png.png)
 
 ### Genre & Audience Insights
 
-![Genre and Audience Insights](images/dashboard_genre_audience.png)
+![Genre and Audience Insights](IMBD%20Data/images/dashboard_genre_audience.png.png)
 
 ### Director & Movie Performance
 
-![Director and Movie Performance](images/dashboard_director_performance.png)
+![Director and Movie Performance](IMBD%20Data/images/dashboard_director_performance.png.png)
 
 ### ML Revenue Prediction
 
-![ML Revenue Prediction](images/dashboard_ml_prediction.png)
+![ML Revenue Prediction](IMBD%20Data/images/dashboard_ml_prediction.png.png)
 
 ---
 
-## Key Insights
+## 💡 Key Insights
 
 - Movies with higher audience votes tend to generate higher revenue.
 - High IMDb ratings do not always guarantee high revenue.
-- Revenue is influenced by audience engagement, genre, and visibility.
+- Revenue is strongly influenced by audience engagement, visibility, and genre.
 - Critic scores and IMDb ratings show a positive relationship, but they do not always align perfectly.
 - Some genres perform better commercially, while others perform better critically.
-- Director-level analysis shows that consistent performance is better evaluated when directors have multiple movies in the dataset.
+- Director performance is more reliable when evaluated using both average rating and movie count.
 - The machine learning model achieved moderate predictive performance, showing that revenue can be partially estimated from available movie attributes.
 
 ---
 
-## Business Recommendations
+## 🚀 Business Recommendations
 
 Based on the analysis:
 
 - Use audience engagement metrics such as votes as an important signal for commercial success.
 - Analyze genre performance separately for revenue and ratings because commercial and critical success may differ.
 - Evaluate directors based on both average rating and number of movies to avoid misleading conclusions.
-- Use predictive modeling as a support tool, not a final decision-maker, because key financial variables such as budget and marketing spend are missing.
+- Use predictive modeling as a decision-support tool, not as the only decision-making method.
 - Improve future revenue prediction by adding budget, production company, release month, country, franchise status, and marketing-related data.
 
 ---
 
-## How to Run This Project
+## ⚠️ Project Limitations
+
+This dataset does not include several important factors that can strongly influence movie revenue, such as:
+
+- Production budget
+- Marketing spend
+- Release month
+- Country or region
+- Streaming availability
+- Franchise status
+- Production company
+- Number of theaters
+- Global box office performance
+
+Because of these missing variables, the machine learning model should be interpreted as an analytical support model rather than a complete revenue forecasting system.
+
+---
+
+## ▶️ How to Run This Project
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/IMDb-Movie-Success-Analysis.git
+git clone https://github.com/bhargavimv27/IMDb-Movie-Success-Analysis.git
 cd IMDb-Movie-Success-Analysis
 ```
 
@@ -305,7 +335,7 @@ cd IMDb-Movie-Success-Analysis
 python -m venv venv
 ```
 
-Activate the environment:
+### 3. Activate the Virtual Environment
 
 For Windows:
 
@@ -319,15 +349,13 @@ For macOS/Linux:
 source venv/bin/activate
 ```
 
-### 3. Install Dependencies
+### 4. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the Notebooks
-
-Open Jupyter Notebook:
+### 5. Run the Notebooks
 
 ```bash
 jupyter notebook
@@ -340,7 +368,7 @@ notebooks/01_data_cleaning_eda.ipynb
 notebooks/02_machine_learning_model.ipynb
 ```
 
-### 5. Open the Power BI Dashboard
+### 6. Open the Power BI Dashboard
 
 Open the Power BI file:
 
@@ -348,7 +376,7 @@ Open the Power BI file:
 dashboard/imdb_movie_success_dashboard.pbix
 ```
 
-If needed, update the data source paths inside Power BI to point to the CSV files in:
+If needed, update the data source paths in Power BI to point to:
 
 ```text
 data/processed/
@@ -356,21 +384,21 @@ data/processed/
 
 ---
 
-## Future Improvements
+## 🔮 Future Improvements
 
 Potential improvements for this project include:
 
-- Adding movie budget data
-- Including release month and seasonality
-- Adding production company and country information
-- Using external box office datasets
-- Testing advanced models such as XGBoost or LightGBM
-- Deploying the model as a small web app
-- Publishing the Power BI dashboard online
+- Add movie budget data
+- Include release month and seasonality
+- Add production company and country information
+- Use external box office datasets
+- Try advanced models such as XGBoost or LightGBM
+- Deploy the model as a simple web app
+- Publish the Power BI dashboard online
 
 ---
 
-## Project Status
+## ✅ Project Status
 
 Completed:
 
@@ -379,11 +407,16 @@ Completed:
 - Feature engineering
 - Machine learning model development
 - Power BI dataset preparation
-- Dashboard design plan
+- Power BI dashboard
+- Dashboard screenshots
+- GitHub-ready documentation
 
-To finalize:
+---
 
-- Add Power BI `.pbix` file
-- Export dashboard screenshots
-- Update dashboard preview images in this README
+## 👤 Author
 
+**Bhargavi Marghashayam Venkatesh**
+
+GitHub: [@bhargavimv27](https://github.com/bhargavimv27)
+
+---
