@@ -415,8 +415,6 @@ Completed:
 
 ## 👤 Author
 
-**Bhargavi Marghashayam Venkatesh**
-
-GitHub: [@bhargavimv27](https://github.com/bhargavimv27)
+**Raghavendra Marghashayam Venkatesh**
 
 ---
