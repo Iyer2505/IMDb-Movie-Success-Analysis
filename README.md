@@ -250,7 +250,7 @@ Replace these image paths with your actual exported Power BI screenshots after b
 
 ### Executive Overview
 
-![Executive Overview](images/dashboard_executive_overview.png)
+![Executive Overview](IMBD_Data/images/dashboard_executive_overview.png)
 
 ### Genre & Audience Insights
 
